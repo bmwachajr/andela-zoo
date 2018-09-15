@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cites_id: 1
+  common_name: MyText
+  kingdom: MyText
+  phylum: MyText
+  class: MyText
+  order: MyText
+  family: MyText
+
+two:
+  cites_id: 1
+  common_name: MyText
+  kingdom: MyText
+  phylum: MyText
+  class: MyText
+  order: MyText
+  family: MyText

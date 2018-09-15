@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cites:</strong>
+  <%= @animal.cites_id %>
+</p>
+
+<p>
+  <strong>Common name:</strong>
+  <%= @animal.common_name %>
+</p>
+
+<p>
+  <strong>Kingdom:</strong>
+  <%= @animal.kingdom %>
+</p>
+
+<p>
+  <strong>Phylum:</strong>
+  <%= @animal.phylum %>
+</p>
+
+<p>
+  <strong>Class:</strong>
+  <%= @animal.animal_class %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @animal.order %>
+</p>
+
+<p>
+  <strong>Family:</strong>
+  <%= @animal.family %>
+</p>
+
+<%= link_to 'Edit', edit_animal_path(@animal) %> |
+<%= link_to 'Back', animals_path %>
