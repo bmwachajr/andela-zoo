@@ -34,6 +34,16 @@
   <strong>Family:</strong>
   <%= @animal.family %>
 </p>
+<p>
+  <strong>Legislations:</strong>
+  <% @suspensions.each do |suspension| %>
+    <p><%= suspension["notes"] %>
+    <p><%= suspension["geo_entity"]["name"] %>
+    <p><%= suspension["start_notification"]["name"] %>
+    <p><%= suspension["start_notification"]["date"] %>
+    <p><%= suspension["start_notification"]["url"] %>
+  <% end%>
+</p>
 
 <%= link_to 'Edit', edit_animal_path(@animal) %> |
 <%= link_to 'Back', animals_path %>

@@ -12,6 +12,8 @@ class AnimalsController < ApplicationController
   # GET /animals/1
   # GET /animals/1.json
   def show
+    # puts params
+    @suspensions = legislation(params[:id])
   end
 
   # GET /animals/new
@@ -77,6 +79,28 @@ class AnimalsController < ApplicationController
     end
     
     redirect_to :index
+  end
+
+  def legislation(cites_id)
+    taxonimic_id = cites_id
+    url = "https://api.speciesplus.net/api/v1/taxon_concepts/#{taxonimic_id}/cites_legislation"
+    headers = {
+      "X-Authentication-Token": 'Rk7DfB3l25nsX6zV4qozTQtt'
+    }
+
+    response = HTTParty.get(url, headers: headers)
+
+    suspensions = []
+
+    for suspension in response["cites_suspensions"]
+      suspensions << {
+        notes: suspension["notes"],
+        country: suspension["geo_entity"]["name"],
+        cite: suspension["start_notification"]["name"],
+        date: suspension["start_notification"]["date"],
+        url: suspension["start_notification"]["url"]
+      }
+    end
   end
 
   private
